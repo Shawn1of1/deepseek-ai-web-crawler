@@ -1,19 +1,15 @@
 import requests
 
-# URL of the LinkedIn feed page
 url = "https://www.linkedin.com/feed/"
 
-# Set headers to simulate a real browser request
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
 }
 
-# Send GET request with headers to LinkedIn
 response = requests.get(url, headers=headers)
 
-# Check if the request was successful (HTTP status code 200)
 if response.status_code == 200:
     print("Successfully crawled the page!")
-    print(response.text[:500])  # Print the first 500 characters of the page content
+    print(response.text[:500])  # Print first 500 characters
 else:
     print(f"Error {response.status_code}: Unable to crawl the page")
